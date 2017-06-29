@@ -1,0 +1,15 @@
+﻿/*
+ * Määritä kaikki missun käytössä olevat funktiot
+ */
+
+class cfgFunctions {
+    // Älä poista!
+    // Tämän alla ovat kaikki missions kansion skriptit, kuten briefing ja loadout
+    #include "mission\functions.hpp"
+
+    // Jos et tarvitse kuikka skriptejä, voit poistaa alemman rivin ja kuikka kansion
+    #include "kuikka\functions.hpp"
+};
+
+// Lisää debug konsoli adminille
+enableDebugConsole = 1;
