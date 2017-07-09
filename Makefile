@@ -1,12 +1,10 @@
 FLAGS = -i include -w unquoted-string -w redefinition-wo-undef -f
 
 all:
-	@armake build ${FLAGS} full full.pbo
-	@armake build ${FLAGS} min min.pbo
+	@armake build ${FLAGS} mission_template mission_template.pbo
 
 test:
-	@sqflint -d full
-	@sqflint -d min
+	@sqflint -d mission_template
 
 clean:
 	rm -rf $(BIN)

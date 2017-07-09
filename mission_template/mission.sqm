@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1;
@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=102;
+		nextID=107;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13295.886,224.24066,14794.6};
-		dir[]={-0.60259056,-0.44273266,0.66411602};
-		up[]={-0.29753169,0.89662135,0.32791251};
-		aside[]={0.74064612,-4.7625508e-007,0.67203182};
+		pos[]={3457.521,100.57343,4062.8306};
+		dir[]={-0.32223961,-0.57975471,0.74840343};
+		up[]={-0.22926666,0.81480873,0.53247327};
+		aside[]={0.91849959,-8.8184606e-008,0.39547807};
 	};
 };
 binarizationWanted=0;
@@ -52,26 +52,29 @@ class AddonsMetaData
 		class Item2
 		{
 			className="kge_respawn";
-			name="kge_respawn";
+			name="KGE - Respawn";
+			author="Osasto Kuikka";
+			url="https://github.com/osasto-kuikka/KGE";
 		};
 		class Item3
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 	};
 };
 randomSeed=16653760;
 class ScenarioData
 {
-	author="empty";
-	overviewText="empty";
-	onLoadMission="empty";
+	author="Tekijän nimi";
+	overviewText="Tietoa tehtävästäsi";
+	onLoadMission="Tämä teksti näkyy tehtävään ladatessa";
 	saving=0;
 	disabledAI=1;
 	respawn=3;
+	respawnDelay=5;
 	class Header
 	{
 		gameType="Coop";
@@ -142,7 +145,7 @@ class CustomAttributes
 		};
 		class Attribute3
 		{
-			property="ReviveRequiredItemsFakConsumed";
+			property="ReviveMedicSpeedMultiplier";
 			expression="false";
 			class Value
 			{
@@ -152,10 +155,10 @@ class CustomAttributes
 					{
 						type[]=
 						{
-							"BOOL"
+							"SCALAR"
 						};
 					};
-					value=1;
+					value=2;
 				};
 			};
 		};
@@ -180,25 +183,6 @@ class CustomAttributes
 		};
 		class Attribute5
 		{
-			property="ReviveMedicSpeedMultiplier";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=2;
-				};
-			};
-		};
-		class Attribute6
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -216,7 +200,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute7
+		class Attribute6
 		{
 			property="ReviveForceRespawnDelay";
 			expression="false";
@@ -235,7 +219,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute8
+		class Attribute7
 		{
 			property="ReviveBleedOutDelay";
 			expression="false";
@@ -254,7 +238,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute9
+		class Attribute8
 		{
 			property="ReviveDelay";
 			expression="false";
@@ -273,7 +257,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute10
+		class Attribute9
 		{
 			property="ReviveUnconsciousStateMode";
 			expression="false";
@@ -292,7 +276,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute11
+		class Attribute10
 		{
 			property="ReviveRequiredItems";
 			expression="false";
@@ -311,7 +295,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=12;
+		nAttributes=11;
 	};
 	class Category1
 	{
@@ -342,6 +326,8 @@ class Mission
 {
 	class Intel
 	{
+		briefingName="Tehtäväsi nimi";
+		overviewText="Tämä teksti näkyy slottausvalikossa";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;
@@ -360,17 +346,17 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=21;
 		class Item0
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13555.785,5.2255349,14730.021};
-				angles[]={0.012000273,0,6.1848373};
+				position[]={3420.8501,66.676773,4093.623};
 			};
 			id=69;
 			type="ACE_moduleAssignMedicRoles";
+			atlOffset=18.164722;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -419,12 +405,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14135.444,-55.729111,14717.715};
-				angles[]={6.2378817,0,0.039979152};
+				position[]={4000.51,150.24788,4081.3159};
+				angles[]={0.049956869,0,0.2379078};
 			};
 			id=71;
 			type="ACE_moduleMedicalSettings";
-			atlOffset=3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -537,7 +522,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=1;
 						};
 					};
 				};
@@ -701,12 +686,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14214.395,-57.279686,14717.715};
-				angles[]={6.1453972,0,6.2219281};
+				position[]={4079.46,164.99715,4081.3159};
+				angles[]={0.0025135824,0,0.32100078};
 			};
 			id=72;
 			type="ACE_moduleAdvancedMedicalSettings";
-			atlOffset=3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -762,7 +746,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -781,7 +765,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=1;
 						};
 					};
 				};
@@ -800,7 +784,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=1;
 						};
 					};
 				};
@@ -876,7 +860,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=3;
 						};
 					};
 				};
@@ -895,7 +879,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=0;
 						};
 					};
 				};
@@ -914,7 +898,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=0;
 						};
 					};
 				};
@@ -933,7 +917,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1;
+							value=0;
 						};
 					};
 				};
@@ -964,83 +948,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14211.578,-60.5056,14637.387};
-			};
-			id=74;
-			type="ACE_moduleAddSpareParts";
-			atlOffset=2.4332047;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ACE_moduleAddSpareParts_Part";
-					expression="_this setVariable ['Part',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="ACE_Wheel";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ACE_moduleAddSpareParts_List";
-					expression="_this setVariable ['List',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ACE_moduleAddSpareParts_Amount";
-					expression="_this setVariable ['Amount',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item4
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={13554.316,-2.5806568,14641.796};
-				angles[]={6.1414752,0,6.2299027};
+				position[]={3419.3821,80.95842,4005.396};
 			};
 			id=75;
 			type="ACE_moduleAssignEngineerRoles";
+			atlOffset=12.999374;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1084,16 +996,16 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14136.59,-54.423737,14634.444};
+				position[]={4000,129.13,4000};
+				angles[]={6.268187,0,0.35217935};
 			};
 			id=76;
 			type="KGE_respawnInit";
-			atlOffset=12.191673;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1270,122 +1182,347 @@ class Mission
 				nAttributes=9;
 			};
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
-			position[]={14636.986,-60.007751,14811.314};
+			position[]={4854.7983,-3.8701172,4264.5537};
 			name="blufor_dead";
 			text="blufor_dead";
 			type="Empty";
 			id=77;
-			atlOffset=-3.8146973e-006;
+			atlOffset=-165.59129;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
-			position[]={14636.983,-62.198959,14777.361};
+			position[]={4854.7954,-3.8701172,4230.6006};
 			name="blufor_spawn";
 			text="blufor_spawn";
 			type="Empty";
 			id=78;
-			atlOffset=3.8146973e-006;
+			atlOffset=-149.76395;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Marker";
-			position[]={14636.842,-65.040543,14741.988};
+			position[]={4854.6538,-3.8701172,4195.2275};
 			name="respawn_west";
 			text="respawn_west";
 			type="Empty";
 			id=79;
-			atlOffset=-7.6293945e-006;
+			atlOffset=-136.43828;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Marker";
-			position[]={14636.763,-63.503761,14686.342};
+			position[]={4854.5747,-3.8701172,4139.5811};
 			name="opfor_dead";
 			text="opfor_dead";
 			type="Empty";
 			id=90;
+			atlOffset=-107.92623;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Marker";
-			position[]={14636.76,-61.202156,14652.389};
+			position[]={4854.5718,-3.8701172,4105.6279};
 			name="opfor_spawn";
 			text="opfor_spawn";
 			type="Empty";
 			id=91;
-			atlOffset=0.8949585;
+			atlOffset=-95.171585;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Marker";
-			position[]={14636.618,-58.508804,14617.016};
+			position[]={4854.4302,-3.8701172,4070.2546};
 			name="respawn_east";
 			text="respawn_east";
 			type="Empty";
 			id=92;
-			atlOffset=3.8146973e-006;
+			atlOffset=-82.0942;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Marker";
-			position[]={14634.448,-55.098541,14554.484};
+			position[]={4852.2603,-3.8701172,4007.7234};
 			name="independent_dead";
 			text="independent_dead";
 			type="Empty";
 			id=93;
-			atlOffset=4.2200203;
+			atlOffset=-99.477623;
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Marker";
-			position[]={14634.445,-48.192436,14520.531};
+			position[]={4852.2573,-3.8701172,3973.7703};
 			name="independent_spawn";
 			text="independent_spawn";
 			type="Empty";
 			id=94;
+			atlOffset=-115.2215;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Marker";
-			position[]={14634.304,-47.083504,14485.158};
+			position[]={4852.1157,-3.8701172,3938.3972};
 			name="respawn_independent";
 			text="respawn_independent";
 			type="Empty";
 			id=95;
+			atlOffset=-133.63126;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Marker";
-			position[]={14632.134,-48.910835,14428.41};
+			position[]={4849.9458,-3.8701172,3881.6492};
 			name="civilian_dead";
 			text="civilian_dead";
 			type="Empty";
 			id=96;
-			atlOffset=3.8146973e-006;
+			atlOffset=-140.38423;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Marker";
-			position[]={14632.131,-64.400368,14394.457};
+			position[]={4849.9429,-3.8701172,3847.696};
 			name="civilian_spawn";
 			text="civilian_spawn";
 			type="Empty";
 			id=97;
-			atlOffset=0.31255341;
+			atlOffset=-139.30283;
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Marker";
-			position[]={14631.989,-68.317123,14359.084};
+			position[]={4849.8013,-3.8701172,3812.323};
 			name="respawn_civilian";
 			text="respawn_civilian";
 			type="Empty";
 			id=98;
-			atlOffset=5.6975021;
+			atlOffset=-126.95827;
+		};
+		class Item17
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4860.1812,188.36206,4330.3496};
+			};
+			title="Markereiden tarkoitus";
+			description="Alla olevat markerit määrittävät miten KGE käsittelee pelaajia." \n "" \n "puoli_dead marker on piste mihin pelaaja siirtyy kuollessaan." \n "puoli_spawn marker on piste mihin pelaaja siirtyy respawnin tapahtuessa." \n "respawn_puoli marker on piste mihin pelaaja siirtyy virhetilanteen tapahtuessa." \n "" \n "Tarvitset tehtävääsi vain pelattavan puolen 3 vaadittua markeria, ei pelattavien puolten markerit voit halutessasi poistaa.";
+			id=102;
+			atlOffset=3.2697449;
+		};
+		class Item18
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3425.7339,113.77164,4184.5688};
+			};
+			title="Medic/Engineer moduulit";
+			description="Nämä moduulit mahdollistavat nimettyjen unitien roolin toimivuuden." \n "Anna haluamallesi unitille nimi ja lisää kyseinen nimi hänen rooliaan vastaavaan moduuliin.";
+			id=103;
+			atlOffset=37.792847;
+		};
+		class Item19
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4078.749,161.89377,3999.198};
+				angles[]={6.2207661,0,0.45762977};
+			};
+			id=105;
+			type="ACE_moduleRepairSettings";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ACE_moduleRepairSettings_fullRepairLocation";
+					expression="_this setVariable ['fullRepairLocation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ACE_moduleRepairSettings_engineerSetting_fullRepair";
+					expression="_this setVariable ['engineerSetting_fullRepair',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ACE_moduleRepairSettings_engineerSetting_Repair";
+					expression="_this setVariable ['engineerSetting_Repair',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ACE_moduleRepairSettings_consumeItem_ToolKit";
+					expression="_this setVariable ['consumeItem_ToolKit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ACE_moduleRepairSettings_repairDamageThreshold";
+					expression="_this setVariable ['repairDamageThreshold',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.60000002;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ACE_moduleRepairSettings_wheelRepairRequiredItems";
+					expression="_this setVariable ['wheelRepairRequiredItems',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ACE_moduleRepairSettings_repairDamageThreshold_Engineer";
+					expression="_this setVariable ['repairDamageThreshold_Engineer',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.40000001;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ACE_moduleRepairSettings_engineerSetting_Wheel";
+					expression="_this setVariable ['engineerSetting_Wheel',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ACE_moduleRepairSettings_addSpareParts";
+					expression="_this setVariable ['addSpareParts',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=9;
+			};
+		};
+		class Item20
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4042.511,228.21385,4174.064};
+			};
+			title="ACE/KGE Moduulit";
+			description="Näitä moduuleja muokkaamalla pystyt vaikuttamaan esim lääkintämiehen tai engineerin toimintaan. " \n "" \n "KGE moduulista löytyy respawniin liittyvät asiat. " \n "KGE moduuli on pakollinen.";
+			id=106;
+			atlOffset=94.333725;
 		};
 	};
 };
